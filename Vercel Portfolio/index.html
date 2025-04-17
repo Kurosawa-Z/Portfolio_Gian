@@ -21,7 +21,6 @@
             margin: 0 auto;
             max-width: 1000px;
             padding: 0 20px;
-            /* Fade-in animation */
             animation: fadeIn 2s ease-in-out;
         }
         @keyframes fadeIn {
@@ -122,6 +121,41 @@
         .section.active {
             display: block;
         }
+        .projects-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: nowrap;
+        }
+        .project-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            width: 22%;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3);
+        }
+        .project-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        .project-card h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .project-card p {
+            font-family: 'Courgette', serif;
+            font-size: 14px;
+            padding: 0 10px 15px;
+            color: #e0e0e0;
+        }
         @media (max-width: 768px) {
             .navbar {
                 padding: 10px;
@@ -170,6 +204,16 @@
             .resume {
                 margin-left: 5%;
             }
+            .projects-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .project-card {
+                width: 80%;
+            }
+            .project-card img {
+                height: 150px;
+            }
         }
     </style>
 </head>
@@ -206,8 +250,29 @@
                 </div>
             </div>
             <div class="section" id="projects">
-                    <h1 style="font-family: 'Cinzel', serif; text-align: center;">Projects</h1>
-                <p style="font-family: 'Courgette', serif; text-align: center;">This is the Projects section. Add your project content here.</p>
+                <h1 style="font-family: 'Cinzel', serif; text-align: center;">Projects</h1>
+                <div class="projects-container">
+                    <div class="project-card">
+                        <img src="psalm.jpg" alt="Project 1">
+                        <h3>Psalm-23 Cafe</h3>
+                        <p>Description: Psalm23- Cafe is a comprehensive software solution that integrates sales, inventory, finance, and human resources into a unified platform to streamline operations. By automating key processes, it enhances efficiency, accuracy, and decision-making through real-time data and insights.ive glimpse into my professional background and personal interests.</p>
+                    </div>
+                    <div class="project-card">
+                        <img src="sage.jpg" alt="Project 2">
+                        <h3>Task Manager App</h3>
+                        <p>A web-based application for managing tasks, built with HTML, CSS, and JavaScript.</p>
+                    </div>
+                    <div class="project-card">
+                        <img src="veloryders.jpg" alt="Project 3">
+                        <h3>E-Commerce UI</h3>
+                        <p>A frontend design for an e-commerce platform, focusing on user-friendly navigation and aesthetics.</p>
+                    </div>
+                    <div class="project-card">
+                        <img src="lakbay.jpg" alt="Project 4">
+                        <h3>Weather Dashboard</h3>
+                        <p>A dynamic dashboard displaying real-time weather data using APIs and responsive design.</p>
+                    </div>
+                </div>
             </div>
             <div class="section" id="about">
                 <h1 style="font-family: 'Cinzel', serif; text-align: center;">About</h1>
@@ -226,20 +291,14 @@
 
             navLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
-                    e.preventDefault(); // Prevent default link behavior
-
-                    // Remove active class from all links and sections
+                    e.preventDefault();
                     navLinks.forEach(l => l.classList.remove('active'));
                     sections.forEach(s => s.classList.remove('active'));
-
-                    // Add active class to clicked link and corresponding section
                     link.classList.add('active');
                     const sectionId = link.getAttribute('data-section');
                     document.getElementById(sectionId).classList.add('active');
                 });
             });
-
-            // Set initial active state (Home)
             navLinks[0].classList.add('active');
         });
     </script>
