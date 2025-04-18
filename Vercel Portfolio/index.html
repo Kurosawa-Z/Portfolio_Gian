@@ -156,6 +156,124 @@
             padding: 0 10px 15px;
             color: #e0e0e0;
         }
+        /* About Section Styles */
+        .about-container {
+            display: flex;
+            gap: 40px;
+            margin-top: 20px;
+            align-items: flex-start;
+        }
+        .about-photo-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .about-photo-placeholder {
+            width: 250px;
+            height: 350px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Courgette', serif;
+            font-size: 18px;
+            color: #e0e0e0;
+        }
+        .about-info-container {
+            flex: 2;
+            text-align: left;
+        }
+        .about-info-container h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: cyan;
+        }
+        .about-info-container p {
+            font-family: 'Courgette', serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #e0e0e0;
+            margin-bottom: 20px;
+        }
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .skills-list li {
+            background-color: rgba(0, 255, 255, 0.2);
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-family: 'Courgette', serif;
+            font-size: 14px;
+            color: white;
+        }
+        /* Contact Section Styles */
+        .contact-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-top: 20px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .contact-container h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        .contact-container p {
+            font-family: 'Courgette', serif;
+            font-size: 18px;
+            color: #e0e0e0;
+            margin-bottom: 20px;
+        }
+        .contact-platforms {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+        }
+        .platform-container {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+        }
+        .platform-container:hover {
+            background-color: rgba(0, 255, 255, 0.3);
+        }
+        .platform-placeholder {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Courgette', serif;
+            font-size: 14px;
+            color: #e0e0e0;
+        }
+        .platform-title {
+            font-family: 'Cinzel', serif;
+            font-size: 18px;
+            color: white;
+            flex: 1;
+            text-align: left;
+        }
         @media (max-width: 768px) {
             .navbar {
                 padding: 10px;
@@ -213,6 +331,47 @@
             }
             .project-card img {
                 height: 120px;
+            }
+            .about-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .about-photo-placeholder {
+                width: 150px;
+                height: 210px;
+                margin-bottom: 20px;
+            }
+            .about-info-container h2 {
+                font-size: 20px;
+            }
+            .about-info-container p {
+                font-size: 14px;
+            }
+            .skills-list li {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+            .contact-container {
+                max-width: 300px;
+            }
+            .contact-container h1 {
+                font-size: 28px;
+            }
+            .contact-container p {
+                font-size: 16px;
+                margin-bottom: 15px;
+            }
+            .platform-container {
+                padding: 10px;
+            }
+            .platform-placeholder {
+                width: 60px;
+                height: 60px;
+                font-size: 12px;
+            }
+            .platform-title {
+                font-size: 16px;
             }
         }
     </style>
@@ -276,12 +435,54 @@
                 </div>
             </div>
             <div class="section" id="about">
-                <h1 style="font-family: 'Cinzel', serif; text-align: center;">About</h1>
-                <p style="font-family: 'Courgette', serif; text-align: center;">This is the About section. Add your bio here.</p>
+                <h1 style="font-family: 'Cinzel', serif; text-align: center;">About Me</h1>
+                <div class="about-container">
+                    <div class="about-photo-container">
+                        <img src="giann.jpg" alt="About Photo" class="about-photo-placeholder" style="border-radius: 10px; object-fit: cover; width: 100%; height: auto;">
+                    </div>
+                    <div class="about-info-container">
+                        <h2>Personal Introduction</h2>
+                        <p>Hi, I’m Gian Higino O. Fungo, a passionate web developer and computer science student dedicated to creating seamless, user-friendly digital experiences. I thrive on turning ideas into interactive websites that blend aesthetics with functionality.</p>
+                        <h2>Skills & Expertise</h2>
+                        <ul class="skills-list">
+                            <li style="color: white;">React-tailwind</li>
+                            <li style="color: lightgreen;">JavaScript</li>
+                            <li style="color: orange;">HTML-CSS</li>
+                            <li style="color: yellow;">Responsive Design</li>
+                            <li style="color: pink;">UI/UX Principles</li>
+                        </ul>
+                        <h2>Background Snapshot</h2>
+                        <p>I’m a 3rd-year Bachelor of Science in Computer Science student at the University of Caloocan City. My journey in tech began with a curiosity for coding, leading me to build projects like SAGE.AI and Psalm-23 Cafe. I’ve honed my frontend development skills through academic and real-world projects.</p>
+                        <h2>Personality & Values</h2>
+                        <p>I’m driven by creativity, collaboration, and continuous learning. I believe in crafting solutions that are not only functional but also delightful to use. When I’m not coding, you’ll find me exploring design trends or biking to clear my mind.</p>
+                    </div>
+                </div>
             </div>
             <div class="section" id="contact">
-                <h1 style="font-family: 'Cinzel', serif; text-align: center;">Contact</h1>
-                <p style="font-family: 'Courgette', serif; text-align: center;">This is the Contact section. Add your contact form here.</p>
+                <div class="contact-container">
+                    <h1>Contact Me</h1>
+                    <p>Connect with me through the platforms below!</p>
+                    <div class="contact-platforms">
+                        <a href="https://www.facebook.com/gian.fungo.7" target="_blank" class="platform-container">
+                            <div class="platform-placeholder" style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;">
+                                <img src="facebook.png" alt="Facebook Icon" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+                            </div>
+                            <div class="platform-title">Facebook</div>
+                        </a>
+                        <a href="https://github.com/Kurosawa-Z" target="_blank" class="platform-container">
+                            <div class="platform-placeholder" style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;">
+                                <img src="github.png" alt="GitHub Icon" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+                            </div>
+                            <div class="platform-title">GitHub</div>
+                        </a>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=gianhiginofungo@gmail.com" class="platform-container">
+                            <div class="platform-placeholder" style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;">
+                                <img src="gmail.png" alt="Gmail Icon" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+                            </div>
+                            <div class="platform-title">Gmail</div>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
