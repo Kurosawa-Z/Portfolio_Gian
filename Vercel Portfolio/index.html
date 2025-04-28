@@ -483,27 +483,71 @@
             <div class="section" id="projects">
                 <h1 style="font-family: 'Cinzel', serif; text-align: center;">Projects</h1>
                 <div class="projects-container">
-                    <div class="project-card">
+                    <div class="project-card" onclick="openModal('Veloryders', 'veloryders.jpg', 'Description: This comprehensive app provides an extensive history of bikes, different types (like road, mountain, and gravel bikes), and detailed information on bike parts. It also offers maintenance tips and a helpful redirecting feature to trusted brands for parts and descriptions.', ['HTML', 'CSS', 'JavaScript'])">
                         <img src="veloryders.jpg" alt="Project 1">
                         <h3>Veloryders</h3>
-                        <p>Description: This comprehensive app provides an extensive history of bikes, different types (like road, mountain, and gravel bikes), and detailed information on bike parts. It also offers maintenance tips and a helpful redirecting feature to trusted brands for parts and descriptions.</p>
                     </div>
-                    <div class="project-card">
+
+                    <!-- Modal -->
+                    <div id="projectModal" class="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); z-index: 1000; justify-content: center; align-items: center;">
+                        <div class="modal-content" style="background-color: #333; color: white; padding: 20px; border-radius: 10px; max-width: 800px; width: 90%; display: flex; gap: 20px;">
+                            <div class="modal-image" style="flex: 1;">
+                                <img id="modalImage" src="" alt="Project Image" style="width: 100%; border-radius: 10px;">
+                            </div>
+                            <div class="modal-description" style="flex: 2;">
+                                <h2 id="modalTitle" style="font-family: 'Cinzel', serif; color: cyan;"></h2>
+                                <p id="modalText" style="font-family: 'sans-serif', serif; line-height: 1.6;"></p>
+                                <h3 style="font-family: 'Cinzel', serif; color: cyan;">Tech Stack:</h3>
+                                <ul id="modalTechStack" style="list-style: none; padding: 0; display: flex; gap: 10px; flex-wrap: wrap;">
+                                </ul>
+                            </div>
+                            <button onclick="closeModal()" style="position: absolute; top: 10px; right: 10px; background: none; border: none; color: white; font-size: 20px; cursor: pointer;">&times;</button>
+                        </div>
+                    </div>
+
+                    <div class="project-card" onclick="openModal('Lakbay ni Pepe', 'lakbay.jpg', 'Description: A travel guide app that showcases the rich history and culture of the Philippines, featuring popular destinations, local cuisines, and travel tips.', ['HTML', 'CSS', 'JavaScript'])">
                         <img src="lakbay.jpg" alt="Project 2">
                         <h3>Lakbay ni Pepe</h3>
-                        <p>Description: "lakbay ni pepe" is a console-based book library offering access to José Rizal's seminal works, El Filibusterismo and Noli Me Tangere. It provides an easy way to view and explore these important historical texts.</p>
                     </div>
-                    <div class="project-card">
+                    <div class="project-card" onclick="openModal('Psalm-23 Cafe', 'psalm.jpg', 'Description: A web-based system for a cafe that includes an online menu, reservation system, and customer feedback feature.', ['HTML', 'CSS', 'PHP', 'MySQL'])">
                         <img src="psalm.jpg" alt="Project 3">
                         <h3>Psalm-23 Cafe</h3>
-                        <p>Description: Psalm23- Cafe is a comprehensive software solution that integrates sales, inventory, finance, and human resources into a unified platform to streamline operations. By automating key processes, it enhances efficiency, accuracy, and decision-making through real-time data and insights.</p>
                     </div>
-                    <div class="project-card">
+                    <div class="project-card" onclick="openModal('SAGE.AI', 'sage.jpg', 'Description: An AI-powered chatbot designed to assist users with various tasks, including scheduling, reminders, and answering queries.', ['HTML', 'CSS', 'JavaScript', 'Python'])">
                         <img src="sage.jpg" alt="Project 4">
                         <h3>SAGE.AI</h3>
-                        <p>Description: "SAGE.AI" is a text-driven adventure game hosted in website that is a story telling game with AI technology for story making and plotting. SAGE.AI is built with many technology stack such as React-tailwind, Express, OpenAI, Railway</p>
                     </div>
+
+                    <script>
+                        function openModal(title, imageSrc, description, techStack) {
+                            document.getElementById('modalTitle').textContent = title;
+                            document.getElementById('modalImage').src = imageSrc;
+                            document.getElementById('modalText').textContent = description;
+
+                            const techStackContainer = document.getElementById('modalTechStack');
+                            techStackContainer.innerHTML = '';
+                            techStack.forEach(tech => {
+                                const li = document.createElement('li');
+                                li.textContent = tech;
+                                li.style.backgroundColor = 'rgba(0, 255, 255, 0.2)';
+                                li.style.padding = '8px 15px';
+                                li.style.borderRadius = '5px';
+                                li.style.fontFamily = "'sans', serif";
+                                li.style.fontSize = '14px';
+                                li.style.color = 'white';
+                                techStackContainer.appendChild(li);
+                            });
+
+                            document.getElementById('projectModal').style.display = 'flex';
+                        }
+
+                        function closeModal() {
+                            document.getElementById('projectModal').style.display = 'none';
+                        }
+                    </script>
+
                 </div>
+
                 <h1 style="font-family: 'Cinzel', serif; text-align: center;">My Certificates</h1>
                 <div class="carousel-container">
                     <div class="carousel">
